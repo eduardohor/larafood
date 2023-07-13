@@ -42,4 +42,14 @@ class PlanController extends Controller
 
         return redirect()->route('plans.index');
     }
+
+    public function show($url)
+    {
+        if (!$plan = $this->repository->where('url', $url)->first())
+            return redirect()->back();
+
+        return view('admin.pages.plans.show', [
+            'plan' => $plan
+        ]);
+    }
 }
