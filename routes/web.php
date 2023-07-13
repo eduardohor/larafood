@@ -9,6 +9,8 @@ Route::any('admin/plans/search', 'Admin\PlanController@search')->name('plans.sea
 Route::get('admin/plans/{url}', 'Admin\PlanController@show')->name('plans.show');
 Route::delete('admin/plans/{url}', 'Admin\PlanController@destroy')->name('plans.destroy');
 
+Route::get('admin', 'Admin\PlanController@index')->name('admin.index');
+
 Route::get('/', function () {
     return view('welcome');
 });
